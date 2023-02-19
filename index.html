@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Makhija | Developer</title>    
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../images/logo.jpg">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+
+</head>
+<body>
+    <div class="container" >
+        <div class="navbar" >
+            <img src="../images/logo.jpg" alt="logo" class="logo">
+            <nav>
+                <ul id="menuList">
+                    <li><a href="#abtme">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </nav>
+            <img src="../images/try.png" alt="menu_icon" class="menu_icon" onclick="togglemenu()">
+        </div>
+        <div class="intro" id="abtme">
+            <img src="../images/profile_pictire.jpg" alt="profile_picture">
+            <div class="text">
+                <h1 id='hi'></h1>
+                <p data-aos="fade-up"
+                data-aos-anchor="#example-anchor"
+                data-aos-offset="00"
+                data-aos-duration="500">I'm a Computer and Compunication second year undergrad at MIT, Manipal.
+                    I'm a front-end developer and constantly trying to upgrade my skills.
+                    I regular participate in hackathons so, feel free to hit me up if you want to team up!
+                </p>
+            </div>    
+          
+          
+          
+        </div>
+        <div class="edu" data-aos="zoom-out-down">
+            <h3 >My Education</h3>
+            <ul>
+                <li>Venkateshwar International School, PCM with Computer Science, 2021</li>
+                <li>Manipal Institute of Technology, Computer and Communication Engineering, 2025</li>
+            </ul>
+        </div>
+        <div id="skills" class="skills" data-aos="fade-up">
+            <h3>My Skills</h3>
+
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                  <div class="carousel-slide">
+                    <!-- <img src="../images/mysql-logo.png" alt="Image 1" id="lastClone"> --->
+                    <img src="../images/c-logo.png" alt="Image 1">
+                    <img src="../images/java-logo.jpeg" alt="Image 1">
+                    <img src="../images/python-logo.png" alt="Image 1">
+                    <img src="../images/html-logo.png" alt="Image 1">
+                    <img src="../images/css-logo.png" alt="Image 1">
+                    <img src="../images/JavaScript-logo.png" alt="Image 1">
+                    <img src="../images/react-logo.png" alt="Image 1">
+                    <img src="../images/mysql-logo.png" alt="Image 1">
+                  <!-- <img src="../images/c-logo.png" alt="Image 1" id="firstClone">-->  
+                  </div>
+                </div>
+                <button class="carousel-prev" >&#10094;</button>
+                <button class="carousel-next">&#10095;</button>
+            </div>    
+        </div>
+
+        <div class="project" data-aos="fade-right" data-aos-offset="200"
+        data-aos-easing="ease-in-sine">
+            <h3>Projects</h3>
+            <a href="https://www.ecosnap.co/">EcoSnap</a>
+        </div>
+        <div class="contact" id="contact"   data-aos="flip-left" data-aos-easing="ease-out-cubic"
+        data-aos-duration="1500">
+            <h3>Contact Me</h3>
+            <ul>
+                <li><a href="mailto: aryanmakhija0407@gmail.com" onclick="message();"><img src="../images/gmail-logo.png"></a></li>
+                <li><a href="https://www.linkedin.com/in/aryan-makhija-882753256/"><img src="../images/linkedin-logo.png"></a></li>
+                <li><a href="https://github.com/makhijaaryan"><img src="../images/git-logo.png"></a></li>
+            </ul>
+            <p id="messagedis"></p>
+        </div>    
+        
+    </div>
+
+
+
+    <script>
+        AOS.init();
+
+        var menuList=document.getElementById("menuList")
+        var move=document.getElementById("move")
+        menuList.style.maxHeight="0px";
+        function togglemenu(){
+            if(menuList.style.maxHeight=="0px"){
+                menuList.style.maxHeight="200px"
+                move.style.marginTop="140px"
+            }
+            else{
+                menuList.style.maxHeight="0px"
+                move.style.marginTop="0px"
+            }
+        }
+        
+
+        const carouselSlide = document.querySelector('.carousel-slide');
+        const carouselImages = document.querySelectorAll('.carousel-slide img');
+
+
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+
+        let counter = 0;
+        const slideSize = carouselImages[0].clientWidth *8
+
+        carouselSlide.style.transform = `translateX(${-slideSize * counter}px)`;
+
+        nextBtn.addEventListener('click', () => {
+        if (counter >= carouselImages.length / 3 - 1) return;
+        carouselSlide.style.transition = "transform 0.5s ease-in-out";
+        counter++;
+        carouselSlide.style.transform = `translateX(${-slideSize * counter}px)`;
+        });
+
+        prevBtn.addEventListener('click', () => {
+        if (counter <= 0) return;
+        carouselSlide.style.transition = "transform 0.5s ease-in-out";
+        counter--;
+        carouselSlide.style.transform = `translateX(${-slideSize * counter}px)`;
+        });
+
+        function message(){
+            document.getElementById("messagedis").innerHTML="Thanks for reaching out!";
+        }
+        
+
+        var app = document.getElementById('hi');
+            var typewriter = new Typewriter(app, {loop: true});
+            typewriter.start()
+            typewriter.typeString('Hi!')
+            typewriter.pauseFor(300)
+            typewriter.deleteAll()
+            typewriter.pauseFor(300)
+            typewriter.typeString("I'm Aryan Makhija")
+            typewriter.pauseFor(5000)
+
+
+        
+
+
+    </script>
+
+
+
+
+    
+
+
+    </body>
+</html>
