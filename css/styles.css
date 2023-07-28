@@ -49,6 +49,7 @@ body{
     width: 25px;
     cursor: pointer;
     display: none;
+    margin-right: 1rem!important;
 }
 
 
@@ -195,11 +196,38 @@ nav ul li a:hover{
     margin-left: 6rem;
 }
 
-.project a{
+.ProjectCards{
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    /* margin: 3 3; */
+}
+
+.card{
+    width: 30rem;
+    /* margin-left: 3rem; */
+    /* margin-right: 3rem; */
+    margin: auto auto;
+    /* background: #07132e !important; */
+    background: linear-gradient(to bottom right, rgb(207, 183, 183) , rgb(61, 57, 57)) !important;
+}
+
+.card h6{
+    font-size: 20px;
+    margin-left: 1rem;
+}
+
+.card a{
+    font-size: 20px;
+    color: azure;
+    /* margin-left: 1rem; */
+}
+
+/* .project a{
     font-size: 20px;
     margin-left: 8rem;
     margin-top: 1.2rem;
-}
+} */
 
 .carousel-item .carousel-indicators{
     height: 30rem;
@@ -336,6 +364,17 @@ nav ul li a:hover{
     .item img{
         width: 12rem;
         height: 12rem;
+    }
+
+    .card{
+        margin-top: 3rem;
+    }
+
+
+    .ProjectCards{
+        display: block;
+        align-items: center;
+        
     }
 
 }
